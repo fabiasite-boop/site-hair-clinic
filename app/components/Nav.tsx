@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -30,13 +31,17 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1480px] items-center justify-between px-6 md:px-14">
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-serif text-[20px] tracking-[0.18em] text-[color:var(--color-ink)]">
-            HAIR CLINIC
-          </span>
-          <span className="mt-1 text-[9px] font-light tracking-[0.4em] uppercase text-[color:var(--color-gold)]">
-            by Fábia Oliveira
-          </span>
+        <a href="#top" aria-label="Hair Clinic by Fábia Oliveira" className="block">
+          <Image
+            src="/logo.png"
+            alt="Hair Clinic by Fábia Oliveira"
+            width={600}
+            height={430}
+            priority
+            className={`w-auto transition-all duration-500 ${
+              scrolled ? "h-10 md:h-11" : "h-12 md:h-14"
+            }`}
+          />
         </a>
 
         <ul className="hidden items-center gap-10 md:flex">

@@ -571,13 +571,14 @@ export default function Home() {
           <div className="mx-auto max-w-[1400px]">
             <div className="grid grid-cols-1 gap-12 border-b border-white/[0.07] pb-14 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
               <div>
-                <span className="block font-serif text-[24px] font-normal tracking-[0.04em] text-[color:var(--color-cream)]">
-                  Hair Clinic
-                </span>
-                <span className="mt-1 block text-[9px] uppercase tracking-[0.4em] text-[color:var(--color-gold)]">
-                  by Fábia Oliveira
-                </span>
-                <p className="mt-5 max-w-[280px] text-[13px] leading-[1.9] text-white/40">
+                <Image
+                  src="/logo.png"
+                  alt="Hair Clinic by Fábia Oliveira"
+                  width={600}
+                  height={430}
+                  className="h-20 w-auto"
+                />
+                <p className="mt-6 max-w-[280px] text-[13px] leading-[1.9] text-white/40">
                   Tratamentos capilares com base em tricologia e diagnóstico
                   especializado. Onde a ciência encontra o cuidado.
                 </p>
