@@ -15,7 +15,8 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="relative bg-[color:var(--color-beige)] p-8 md:p-14"
+      aria-label="Pedido de marcação"
+      className="relative bg-[color:var(--color-beige)] p-6 sm:p-8 md:p-12"
     >
       <span
         aria-hidden

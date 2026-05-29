@@ -76,23 +76,33 @@ const corpo: Treatment[] = [
   },
 ];
 
+const tabs = [
+  { id: "capilar", label: "Cabelo & Couro Cabeludo", alt: "tratamentos capilares" },
+  { id: "corpo", label: "Experiências Corpo", alt: "tratamentos corpo" },
+] as const;
+
 export default function TreatmentsTabs() {
   const [active, setActive] = useState<"capilar" | "corpo">("capilar");
   const list = active === "capilar" ? capilar : corpo;
 
   return (
     <div>
-      <div className="mb-px inline-flex border border-[color:var(--color-beige-dark)]">
-        {(
-          [
-            { id: "capilar", label: "Cabelo & Couro Cabeludo" },
-            { id: "corpo", label: "Experiências Corpo" },
-          ] as const
-        ).map((t) => (
+      <div
+        role="tablist"
+        aria-label="Tipos de tratamento"
+        className="mb-px inline-flex flex-wrap border border-[color:var(--color-beige-dark)]"
+      >
+        {tabs.map((t) => (
           <button
             key={t.id}
+            type="button"
+            role="tab"
+            id={`tab-${t.id}`}
+            aria-controls={`panel-${t.id}`}
+            aria-selected={active === t.id}
+            tabIndex={active === t.id ? 0 : -1}
             onClick={() => setActive(t.id)}
-            className={`px-6 py-3 text-[10px] font-light uppercase tracking-[0.25em] transition-all ${
+            className={`px-5 py-3 text-[10px] font-light uppercase tracking-[0.25em] transition-all sm:px-6 ${
               active === t.id
                 ? "bg-[color:var(--color-ink)] text-[color:var(--color-cream)]"
                 : "text-[color:var(--color-text-soft)] hover:text-[color:var(--color-ink)]"
@@ -104,28 +114,32 @@ export default function TreatmentsTabs() {
       </div>
 
       <div
-        className={`grid grid-cols-1 gap-px bg-[color:var(--color-beige-dark)] md:grid-cols-2 ${
+        role="tabpanel"
+        id={`panel-${active}`}
+        aria-labelledby={`tab-${active}`}
+        className={`grid grid-cols-1 gap-px bg-[color:var(--color-beige-dark)] sm:grid-cols-2 ${
           list.length === 4 ? "lg:grid-cols-2" : "lg:grid-cols-3"
         }`}
       >
         {list.map((t) => (
           <article
             key={t.title}
-            className="group relative flex flex-col bg-[color:var(--color-beige)] p-10 transition-colors duration-500 hover:bg-[color:var(--color-beige-deep)]"
+            className="group relative flex flex-col bg-[color:var(--color-beige)] p-7 transition-colors duration-500 hover:bg-[color:var(--color-beige-deep)] sm:p-10"
           >
             <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden">
               <Image
                 src={t.image}
-                alt={t.title}
+                alt={`${t.title} — ${t.badge.toLowerCase()} na Hair Clinic Porto`}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                quality={80}
+                className="object-cover transition-transform duration-[1200ms] group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
               />
             </div>
             <span className="mb-3 inline-block self-start bg-[color:var(--color-gold)]/10 px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
               {t.badge}
             </span>
-            <h3 className="font-serif text-2xl font-normal leading-tight text-[color:var(--color-ink)]">
+            <h3 className="font-serif text-[22px] font-normal leading-tight text-[color:var(--color-ink)] sm:text-2xl">
               {t.title}
             </h3>
             <p className="mt-3 max-w-[42ch] text-[13px] leading-[1.8] text-[color:var(--color-text-soft)]">

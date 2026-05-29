@@ -22,16 +22,46 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  // Close on Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
-    <nav
+    <header
+      role="banner"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[color:var(--color-cream)]/95 backdrop-blur-md border-b border-[color:var(--color-beige-dark)] py-4"
-          : "bg-transparent py-6 md:py-8"
+          ? "bg-[color:var(--color-cream)]/95 backdrop-blur-md border-b border-[color:var(--color-beige-dark)] py-3 sm:py-4"
+          : "bg-transparent py-4 sm:py-6 md:py-8"
       }`}
     >
-      <div className="mx-auto flex max-w-[1480px] items-center justify-between px-6 md:px-14">
-        <a href="#top" aria-label="Hair Clinic by Fábia Oliveira" className="block">
+      <nav
+        aria-label="Navegação principal"
+        className="mx-auto flex max-w-[1480px] items-center justify-between px-5 sm:px-6 md:px-14"
+      >
+        <a
+          href="#top"
+          aria-label="Hair Clinic by Fábia Oliveira — início"
+          className="block flex-shrink-0"
+        >
           <Image
             src="/logo.png"
             alt="Hair Clinic by Fábia Oliveira"
@@ -39,20 +69,23 @@ export default function Nav() {
             height={430}
             priority
             className={`w-auto transition-all duration-500 ${
-              scrolled ? "h-10 md:h-11" : "h-12 md:h-14"
+              scrolled ? "h-9 sm:h-10 md:h-11" : "h-10 sm:h-12 md:h-14"
             }`}
           />
         </a>
 
-        <ul className="hidden items-center gap-10 md:flex">
+        <ul className="hidden items-center gap-8 lg:flex lg:gap-10">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="group relative text-[11px] font-light uppercase tracking-[0.24em] text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-gold)]"
+                className="group relative text-[11px] font-light uppercase tracking-[0.24em] text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-gold)] focus-visible:text-[color:var(--color-gold)]"
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[color:var(--color-gold)] transition-all duration-300 group-hover:w-full" />
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-1 left-0 h-px w-0 bg-[color:var(--color-gold)] transition-all duration-300 group-hover:w-full"
+                />
               </a>
             </li>
           ))}
@@ -60,48 +93,58 @@ export default function Nav() {
 
         <a
           href="#contacto"
-          className="hidden md:inline-block bg-[color:var(--color-ink)] px-7 py-3 text-[10px] font-normal uppercase tracking-[0.3em] text-[color:var(--color-cream)] transition-colors hover:bg-[color:var(--color-green-deep)]"
+          className="hidden lg:inline-block bg-[color:var(--color-ink)] px-6 py-3 text-[10px] font-normal uppercase tracking-[0.3em] text-[color:var(--color-cream)] transition-colors hover:bg-[color:var(--color-green-deep)] focus-visible:bg-[color:var(--color-green-deep)]"
         >
           Marcar Consulta
         </a>
 
         <button
-          aria-label="Abrir menu"
+          type="button"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
+            aria-hidden="true"
             className={`block h-px w-6 bg-[color:var(--color-ink)] transition-all duration-300 ${
               open ? "translate-y-[6px] rotate-45" : ""
             }`}
           />
           <span
+            aria-hidden="true"
             className={`block h-px w-6 bg-[color:var(--color-ink)] transition-all duration-300 ${
               open ? "opacity-0" : ""
             }`}
           />
           <span
+            aria-hidden="true"
             className={`block h-px w-6 bg-[color:var(--color-ink)] transition-all duration-300 ${
               open ? "-translate-y-[6px] -rotate-45" : ""
             }`}
           />
         </button>
-      </div>
+      </nav>
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-500 ${
-          open ? "max-h-[600px]" : "max-h-0"
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu de navegação"
+        hidden={!open}
+        className={`lg:hidden overflow-hidden transition-[max-height] duration-500 ${
+          open ? "max-h-[80vh]" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col gap-1 bg-[color:var(--color-cream)] px-6 pb-8 pt-2">
+        <ul className="flex flex-col gap-1 bg-[color:var(--color-cream)] px-5 pb-8 pt-2 sm:px-6">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-[color:var(--color-beige-dark)] py-4 text-[12px] uppercase tracking-[0.24em] text-[color:var(--color-text)]"
+                className="block border-b border-[color:var(--color-beige-dark)] py-5 text-[12px] uppercase tracking-[0.24em] text-[color:var(--color-text)]"
               >
                 {l.label}
               </a>
@@ -111,13 +154,13 @@ export default function Nav() {
             <a
               href="#contacto"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-block bg-[color:var(--color-ink)] px-7 py-3 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-cream)]"
+              className="mt-5 inline-block bg-[color:var(--color-ink)] px-8 py-4 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-cream)]"
             >
               Marcar Consulta
             </a>
           </li>
         </ul>
       </div>
-    </nav>
+    </header>
   );
 }

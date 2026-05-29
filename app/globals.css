@@ -20,6 +20,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -28,11 +30,27 @@ body {
   color: var(--color-text);
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent horizontal overflow on small screens */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 ::selection {
   background: var(--color-gold);
   color: var(--color-cream);
+}
+
+/* Global focus-visible — clear gold outline on any interactive element */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .font-serif {
@@ -55,6 +73,7 @@ body {
   width: 28px;
   height: 1px;
   background: var(--color-gold);
+  flex-shrink: 0;
 }
 
 /* Reveal-on-scroll baseline */
@@ -127,10 +146,68 @@ body {
   animation: scroll-line 2.4s ease-in-out infinite;
 }
 
-/* Decorative monogram (SVG-like) used in nav/footer */
+/* ── Accessibility: respect user's motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .scroll-line {
+    animation: none !important;
+    opacity: 0.6;
+  }
+}
+
+/* ── Mobile touch targets — minimum 44px for tap-friendly UI ── */
+@media (max-width: 768px) {
+  a,
+  button {
+    min-height: 32px;
+  }
+  a[role="button"],
+  button[type="submit"],
+  .touch-large {
+    min-height: 44px;
+  }
+}
+
+/* Decorative monogram */
 .monogram {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.04em;
+}
+
+/* Print styles — show URLs after links */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  nav,
+  .marquee-track,
+  #cursor,
+  #cursor-ring {
+    display: none !important;
+  }
+  a[href^="http"]::after,
+  a[href^="mailto"]::after,
+  a[href^="tel"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+  }
 }

@@ -1,15 +1,31 @@
 import Image from "next/image";
 import Nav from "./components/Nav";
 import Reveal from "./components/Reveal";
+import StructuredData from "./components/StructuredData";
 import TreatmentsTabs from "./components/TreatmentsTabs";
 import ContactForm from "./components/ContactForm";
 
 const galleryImages = [
-  { src: "/photos/Hair-Clinic-1.jpg", alt: "Fachada com monograma da clínica" },
-  { src: "/photos/Hair-Clinic-20.jpg", alt: "Sala de espera com sofá creme e azulejo português" },
-  { src: "/photos/Hair-Clinic-60.jpg", alt: "Banheira clássica com parede de pedra" },
-  { src: "/photos/Hair-Clinic-30.jpg", alt: "Maca de tratamento com toalha bordada" },
-  { src: "/photos/Hair-Clinic-50.jpg", alt: "Lavatório com toalha da Hair Clinic" },
+  {
+    src: "/photos/Hair-Clinic-1.jpg",
+    alt: "Fachada da Hair Clinic no Porto com monograma da marca em vinil dourado sobre vidro",
+  },
+  {
+    src: "/photos/Hair-Clinic-20.jpg",
+    alt: "Sala de espera da clínica capilar com sofá bouclé creme sobre azulejo português tradicional",
+  },
+  {
+    src: "/photos/Hair-Clinic-60.jpg",
+    alt: "Sala de tratamento corporal com banheira de pés clássica e parede de pedra exposta",
+  },
+  {
+    src: "/photos/Hair-Clinic-30.jpg",
+    alt: "Maca de tratamento tricológico com toalha bordada Hair Clinic e parede de pedra",
+  },
+  {
+    src: "/photos/Hair-Clinic-50.jpg",
+    alt: "Lavatório de cerâmica artesanal com toalha bordada Hair Clinic by Fábia Oliveira",
+  },
 ];
 
 const pillars = [
@@ -75,30 +91,40 @@ const testimonials = [
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Nav />
-      <main id="top" className="flex-1">
+      <main id="main" className="flex-1">
         {/* ─────────────────────────────  HERO  ───────────────────────────── */}
-        <section className="relative min-h-screen overflow-hidden">
+        <section
+          id="top"
+          aria-labelledby="hero-heading"
+          className="relative min-h-[100svh] overflow-hidden"
+        >
           {/* Background photo */}
           <Image
             src="/photos/Hair-Clinic-130.jpg"
-            alt="Cliente em momento de cuidado na Hair Clinic"
+            alt="Cliente em ritual capilar na Hair Clinic by Fábia Oliveira no Porto, em ambiente sereno com turbante bordado"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
-            className="object-cover"
+            quality={85}
+            className="object-cover object-center"
           />
           {/* Veil */}
           <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--color-cream)] via-[color:var(--color-cream)]/85 to-[color:var(--color-cream)]/20 md:from-[color:var(--color-cream)] md:via-[color:var(--color-cream)]/70 md:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-cream)] via-transparent to-transparent md:hidden" />
 
           {/* Content */}
-          <div className="relative z-10 mx-auto flex min-h-screen max-w-[1480px] flex-col justify-end px-6 pb-24 pt-40 md:grid md:grid-cols-12 md:items-end md:px-14 md:pb-28">
+          <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1480px] flex-col justify-end px-5 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-40 md:grid md:grid-cols-12 md:items-end md:px-14 md:pb-28">
             <div className="md:col-span-7 lg:col-span-6">
               <p className="eyebrow mb-8 opacity-0 animate-[fadeUp_1s_0.2s_forwards]">
                 Tricologia · Diagnóstico · Ritual
               </p>
-              <h1 className="font-serif text-[clamp(48px,7vw,100px)] font-light leading-[1.02] text-[color:var(--color-ink)] opacity-0 animate-[fadeUp_1.1s_0.4s_forwards]">
+              <h1
+                id="hero-heading"
+                className="font-serif text-[clamp(40px,7vw,100px)] font-light leading-[1.02] text-[color:var(--color-ink)] opacity-0 animate-[fadeUp_1.1s_0.4s_forwards]"
+              >
                 O cuidado
                 <br />
                 começa <em className="italic text-[color:var(--color-green-deep)]">na raiz.</em>
@@ -150,8 +176,12 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────  MANIFESTO STRIP  ──────────────────────── */}
-        <div className="overflow-hidden bg-[color:var(--color-ink)] py-7">
-          <div className="marquee-track flex w-max gap-16 whitespace-nowrap">
+        <div
+          role="presentation"
+          aria-hidden="true"
+          className="overflow-hidden bg-[color:var(--color-ink)] py-7 motion-reduce:py-5"
+        >
+          <div className="marquee-track flex w-max gap-16 whitespace-nowrap motion-reduce:animate-none">
             {Array.from({ length: 2 }).flatMap((_, k) =>
               [
                 "Tratamos a origem",
@@ -174,14 +204,18 @@ export default function Home() {
         {/* ───────────────────────────────  SOBRE  ─────────────────────────── */}
         <section
           id="sobre"
-          className="mx-auto grid max-w-[1400px] gap-16 px-6 py-24 md:grid-cols-2 md:gap-24 md:px-14 md:py-36 lg:items-center"
+          aria-labelledby="sobre-heading"
+          className="mx-auto grid max-w-[1400px] gap-12 px-5 py-20 sm:gap-16 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-24 md:px-14 md:py-36 lg:items-center"
         >
           <div>
             <Reveal as="p" className="eyebrow">
               A Clínica
             </Reveal>
             <Reveal delay={1}>
-              <h2 className="mt-6 font-serif text-[clamp(34px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]">
+              <h2
+                id="sobre-heading"
+                className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+              >
                 Uma clínica capilar
                 <br />
                 <em className="italic text-[color:var(--color-green-deep)]">
@@ -231,9 +265,10 @@ export default function Home() {
             <div className="relative aspect-[3/4] w-full overflow-hidden">
               <Image
                 src="/photos/Hair-Clinic-90.jpg"
-                alt="Fábia Oliveira, fundadora da Hair Clinic"
+                alt="Fábia Oliveira, tricologista e fundadora da Hair Clinic, com fardamento da marca"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
                 className="object-cover"
               />
             </div>
@@ -256,7 +291,8 @@ export default function Home() {
         {/* ───────────────────────────────  MÉTODO  ────────────────────────── */}
         <section
           id="metodo"
-          className="relative overflow-hidden bg-[color:var(--color-beige)] py-24 md:py-36"
+          aria-labelledby="metodo-heading"
+          className="relative overflow-hidden bg-[color:var(--color-beige)] py-20 sm:py-24 md:py-36"
         >
           <span
             aria-hidden
@@ -272,7 +308,10 @@ export default function Home() {
                   O Processo
                 </Reveal>
                 <Reveal delay={1}>
-                  <h2 className="mt-6 font-serif text-[clamp(34px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]">
+                  <h2
+                    id="metodo-heading"
+                    className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                  >
                     Um método.
                     <br />
                     <em className="italic text-[color:var(--color-green-deep)]">
@@ -312,14 +351,21 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────  TRATAMENTOS  ─────────────────────── */}
-        <section id="tratamentos" className="mx-auto max-w-[1400px] px-6 py-24 md:px-14 md:py-36">
+        <section
+          id="tratamentos"
+          aria-labelledby="tratamentos-heading"
+          className="mx-auto max-w-[1400px] px-5 py-20 sm:px-6 sm:py-24 md:px-14 md:py-36"
+        >
           <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-2 md:gap-20">
             <div>
               <Reveal as="p" className="eyebrow">
                 Serviços
               </Reveal>
               <Reveal delay={1}>
-                <h2 className="mt-6 font-serif text-[clamp(34px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]">
+                <h2
+                  id="tratamentos-heading"
+                  className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                >
                   Rituais pensados
                   <br />
                   <em className="italic text-[color:var(--color-green-deep)]">
@@ -343,7 +389,10 @@ export default function Home() {
         </section>
 
         {/* ──────────────────────────────  QUOTE  ──────────────────────────── */}
-        <section className="relative overflow-hidden bg-[color:var(--color-green-deep)] py-28 text-center md:py-36">
+        <section
+          aria-label="Manifesto da Hair Clinic"
+          className="relative overflow-hidden bg-[color:var(--color-green-deep)] py-24 text-center sm:py-28 md:py-36"
+        >
           <span
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(196,169,107,0.12)_0%,transparent_70%)]"
@@ -370,13 +419,20 @@ export default function Home() {
         </section>
 
         {/* ─────────────────────────────  DIFERENCIAIS  ────────────────────── */}
-        <section id="diferenciais" className="bg-[color:var(--color-ink)] py-24 md:py-36">
-          <div className="mx-auto max-w-[1400px] px-6 md:px-14">
+        <section
+          id="diferenciais"
+          aria-labelledby="diferenciais-heading"
+          className="bg-[color:var(--color-ink)] py-20 sm:py-24 md:py-36"
+        >
+          <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-14">
             <Reveal as="p" className="eyebrow">
               Porquê a Hair Clinic
             </Reveal>
             <Reveal delay={1}>
-              <h2 className="mt-6 max-w-3xl font-serif text-[clamp(34px,3.6vw,60px)] font-light leading-[1.15] text-[color:var(--color-cream)]">
+              <h2
+                id="diferenciais-heading"
+                className="mt-6 max-w-3xl font-serif text-[clamp(30px,3.6vw,60px)] font-light leading-[1.15] text-[color:var(--color-cream)]"
+              >
                 Ciência, cuidado
                 <br />
                 <em className="italic text-[color:var(--color-gold-light)]">
@@ -409,7 +465,8 @@ export default function Home() {
         {/* ────────────────────────────────  GALERIA  ──────────────────────── */}
         <section
           id="galeria"
-          className="bg-[color:var(--color-cream)] py-24 md:py-36"
+          aria-labelledby="galeria-heading"
+          className="bg-[color:var(--color-cream)] py-20 sm:py-24 md:py-36"
         >
           <div className="mx-auto max-w-[1480px] px-6 md:px-14">
             <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-2 md:gap-20">
@@ -418,7 +475,10 @@ export default function Home() {
                   O Espaço
                 </Reveal>
                 <Reveal delay={1}>
-                  <h2 className="mt-6 font-serif text-[clamp(34px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]">
+                  <h2
+                    id="galeria-heading"
+                    className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                  >
                     Onde os sentidos
                     <br />
                     <em className="italic text-[color:var(--color-green-deep)]">
@@ -463,7 +523,8 @@ export default function Home() {
         {/* ─────────────────────────────  TESTEMUNHOS  ─────────────────────── */}
         <section
           id="testemunhos"
-          className="overflow-hidden bg-[color:var(--color-beige)] py-24 md:py-36"
+          aria-labelledby="testemunhos-heading"
+          className="overflow-hidden bg-[color:var(--color-beige)] py-20 sm:py-24 md:py-36"
         >
           <div className="mx-auto max-w-[1400px] px-6 md:px-14">
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
@@ -472,7 +533,10 @@ export default function Home() {
                   Testemunhos
                 </Reveal>
                 <Reveal delay={1}>
-                  <h2 className="mt-6 font-serif text-[clamp(34px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]">
+                  <h2
+                    id="testemunhos-heading"
+                    className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                  >
                     O que dizem
                     <br />
                     <em className="italic text-[color:var(--color-green-deep)]">
@@ -487,7 +551,11 @@ export default function Home() {
               {testimonials.map((t, i) => (
                 <Reveal key={t.name} delay={(i % 3) as 0 | 1 | 2}>
                   <article className="h-full bg-[color:var(--color-cream)] p-10">
-                    <div className="text-[14px] tracking-[3px] text-[color:var(--color-gold)]">
+                    <div
+                      role="img"
+                      aria-label="Avaliação: 5 de 5 estrelas"
+                      className="text-[14px] tracking-[3px] text-[color:var(--color-gold)]"
+                    >
                       ★★★★★
                     </div>
                     <p className="mt-6 font-serif text-[19px] font-light italic leading-[1.6] text-[color:var(--color-ink)]">
@@ -516,14 +584,18 @@ export default function Home() {
         {/* ─────────────────────────────  CONTACTO  ────────────────────────── */}
         <section
           id="contacto"
-          className="mx-auto grid max-w-[1400px] gap-16 px-6 py-24 md:grid-cols-2 md:gap-20 md:px-14 md:py-36 lg:items-center"
+          aria-labelledby="contacto-heading"
+          className="mx-auto grid max-w-[1400px] gap-12 px-5 py-20 sm:gap-16 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-20 md:px-14 md:py-36 lg:items-center"
         >
           <div>
             <Reveal as="p" className="eyebrow">
               Contacto
             </Reveal>
             <Reveal delay={1}>
-              <h2 className="mt-6 font-serif text-[clamp(34px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]">
+              <h2
+                id="contacto-heading"
+                className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+              >
                 Pronta para começar
                 <br />
                 <em className="italic text-[color:var(--color-green-deep)]">
@@ -566,82 +638,103 @@ export default function Home() {
           </Reveal>
         </section>
 
-        {/* ──────────────────────────────  FOOTER  ─────────────────────────── */}
-        <footer className="bg-[color:var(--color-ink)] px-6 py-20 md:px-14 md:py-24">
-          <div className="mx-auto max-w-[1400px]">
-            <div className="grid grid-cols-1 gap-12 border-b border-white/[0.07] pb-14 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
-              <div>
-                <Image
-                  src="/logo.png"
-                  alt="Hair Clinic by Fábia Oliveira"
-                  width={600}
-                  height={430}
-                  className="h-20 w-auto"
-                />
-                <p className="mt-6 max-w-[280px] text-[13px] leading-[1.9] text-white/40">
-                  Tratamentos capilares com base em tricologia e diagnóstico
-                  especializado. Onde a ciência encontra o cuidado.
-                </p>
-              </div>
-              <FooterCol
-                title="Serviços"
-                items={[
-                  "Diagnóstico Capilar",
-                  "Ritual Introdutório",
-                  "Ritual Intensivo",
-                  "Ritual Premium",
-                  "Experiências Corpo",
-                ]}
-              />
-              <FooterCol
-                title="Clínica"
-                items={["Sobre Nós", "O Método", "Testemunhos", "Marcações"]}
-              />
-              <div>
-                <h5 className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
-                  Contacto
-                </h5>
-                <address className="text-[13px] not-italic leading-[1.95] text-white/45">
-                  Porto, Portugal
-                  <br />
-                  <br />
-                  +351 910 000 000
-                  <br />
-                  info@hairclinic.pt
-                  <br />
-                  <br />
-                  Seg–Sex: 9h–19h
-                  <br />
-                  Sáb: 9h–14h
-                </address>
-              </div>
-            </div>
+      </main>
 
-            <div className="mt-10 flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
-              <p className="text-[11px] text-white/25">
-                © {new Date().getFullYear()} Hair Clinic by Fábia Oliveira ·
-                Todos os direitos reservados
+      {/* ──────────────────────────────  FOOTER  ─────────────────────────── */}
+      <footer
+        aria-label="Rodapé"
+        className="bg-[color:var(--color-ink)] px-5 py-16 sm:px-6 sm:py-20 md:px-14 md:py-24"
+      >
+        <div className="mx-auto max-w-[1400px]">
+          <div className="grid grid-cols-1 gap-10 border-b border-white/[0.07] pb-12 sm:gap-12 sm:pb-14 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+            <div>
+              <Image
+                src="/logo.png"
+                alt="Hair Clinic by Fábia Oliveira — Tricologia no Porto"
+                width={600}
+                height={430}
+                className="h-16 w-auto sm:h-20"
+              />
+              <p className="mt-6 max-w-[280px] text-[13px] leading-[1.9] text-white/40">
+                Tratamentos capilares com base em tricologia e diagnóstico
+                especializado. Onde a ciência encontra o cuidado.
               </p>
-              <div className="flex gap-4">
-                {[
-                  { label: "IG", title: "Instagram" },
-                  { label: "f", title: "Facebook" },
-                  { label: "W", title: "WhatsApp" },
-                ].map((s) => (
-                  <a
-                    key={s.title}
-                    href="#"
-                    title={s.title}
-                    className="flex h-9 w-9 items-center justify-center border border-white/10 text-[12px] text-white/40 transition-colors hover:border-[color:var(--color-gold)] hover:text-[color:var(--color-gold)]"
-                  >
-                    {s.label}
-                  </a>
-                ))}
-              </div>
+            </div>
+            <FooterCol
+              title="Serviços"
+              items={[
+                { label: "Diagnóstico Capilar", href: "#tratamentos" },
+                { label: "Ritual Introdutório", href: "#tratamentos" },
+                { label: "Ritual Intensivo", href: "#tratamentos" },
+                { label: "Ritual Premium", href: "#tratamentos" },
+                { label: "Experiências Corpo", href: "#tratamentos" },
+              ]}
+            />
+            <FooterCol
+              title="Clínica"
+              items={[
+                { label: "Sobre Nós", href: "#sobre" },
+                { label: "O Método", href: "#metodo" },
+                { label: "Testemunhos", href: "#testemunhos" },
+                { label: "Marcações", href: "#contacto" },
+              ]}
+            />
+            <div>
+              <h2 className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+                Contacto
+              </h2>
+              <address className="text-[13px] not-italic leading-[1.95] text-white/45">
+                Porto, Portugal
+                <br />
+                <br />
+                <a
+                  href="tel:+351910000000"
+                  className="transition-colors hover:text-white"
+                >
+                  +351 910 000 000
+                </a>
+                <br />
+                <a
+                  href="mailto:info@hairclinic.pt"
+                  className="transition-colors hover:text-white"
+                >
+                  info@hairclinic.pt
+                </a>
+                <br />
+                <br />
+                Seg–Sex: 9h–19h
+                <br />
+                Sáb: 9h–14h
+              </address>
             </div>
           </div>
-        </footer>
-      </main>
+
+          <div className="mt-10 flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
+            <p className="text-[11px] text-white/25">
+              © {new Date().getFullYear()} Hair Clinic by Fábia Oliveira ·
+              Todos os direitos reservados
+            </p>
+            <nav aria-label="Redes sociais" className="flex gap-4">
+              {[
+                { label: "IG", title: "Instagram", href: "https://instagram.com/hairclinicporto" },
+                { label: "f", title: "Facebook", href: "https://facebook.com/hairclinicporto" },
+                { label: "W", title: "WhatsApp", href: "https://wa.me/351910000000" },
+              ].map((s) => (
+                <a
+                  key={s.title}
+                  href={s.href}
+                  aria-label={s.title}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="flex h-10 w-10 items-center justify-center border border-white/10 text-[12px] text-white/40 transition-colors hover:border-[color:var(--color-gold)] hover:text-[color:var(--color-gold)] focus-visible:border-[color:var(--color-gold)] focus-visible:text-[color:var(--color-gold)] focus-visible:outline-none"
+                >
+                  <span aria-hidden="true">{s.label}</span>
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
@@ -660,9 +753,13 @@ function ContactItem({
   return (
     <a
       href={href}
-      className="group flex items-center gap-5 border border-[color:var(--color-beige-dark)] p-5 transition-all hover:border-[color:var(--color-green-deep)] hover:bg-[color:var(--color-beige)]"
+      aria-label={`${label}: ${value}`}
+      className="group flex items-center gap-5 border border-[color:var(--color-beige-dark)] p-5 transition-all hover:border-[color:var(--color-green-deep)] hover:bg-[color:var(--color-beige)] focus-visible:border-[color:var(--color-green-deep)] focus-visible:bg-[color:var(--color-beige)]"
     >
-      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-[color:var(--color-beige)] text-[18px] text-[color:var(--color-green-deep)] transition-colors group-hover:bg-[color:var(--color-green-deep)] group-hover:text-[color:var(--color-cream)]">
+      <div
+        aria-hidden="true"
+        className="flex h-11 w-11 flex-shrink-0 items-center justify-center bg-[color:var(--color-beige)] text-[18px] text-[color:var(--color-green-deep)] transition-colors group-hover:bg-[color:var(--color-green-deep)] group-hover:text-[color:var(--color-cream)]"
+      >
         {icon}
       </div>
       <div>
@@ -675,24 +772,30 @@ function ContactItem({
   );
 }
 
-function FooterCol({ title, items }: { title: string; items: string[] }) {
+function FooterCol({
+  title,
+  items,
+}: {
+  title: string;
+  items: { label: string; href: string }[];
+}) {
   return (
-    <div>
-      <h5 className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+    <nav aria-label={title}>
+      <h2 className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
         {title}
-      </h5>
+      </h2>
       <ul className="flex flex-col gap-3">
         {items.map((i) => (
-          <li key={i}>
+          <li key={i.label}>
             <a
-              href="#"
-              className="text-[13px] text-white/45 transition-colors hover:text-white"
+              href={i.href}
+              className="text-[13px] text-white/45 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none"
             >
-              {i}
+              {i.label}
             </a>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }
