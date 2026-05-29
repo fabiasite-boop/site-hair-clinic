@@ -69,7 +69,7 @@ export default function Nav() {
             height={430}
             priority
             className={`w-auto transition-all duration-500 ${
-              scrolled ? "h-9 sm:h-10 md:h-11" : "h-10 sm:h-12 md:h-14"
+              scrolled ? "h-12 sm:h-14 md:h-16" : "h-14 sm:h-20 md:h-24"
             }`}
           />
         </a>
