@@ -69,22 +69,22 @@ const diferenciais = [
 
 const testimonials = [
   {
-    initial: "A",
-    name: "Ana Sofia M.",
-    sub: "Cliente · Ritual Terapêutico Intensivo",
-    text: "Finalmente percebi que o meu problema de queda tinha uma causa real. O diagnóstico mudou tudo — nunca ninguém me tinha explicado desta forma.",
+    initial: "✦",
+    name: "Cliente Hair Clinic",
+    sub: "Visita inaugural",
+    text: "Está fantástico mesmo. A cara da riqueza, chiquérrimo, muito confortável e super acolhedor. Eu acho isso muito importante. Relaxei completamente, mesmo estando com imensa gente à volta.",
   },
   {
-    initial: "M",
-    name: "Margarida F.",
-    sub: "Cliente · Ritual Clínico Premium",
-    text: "A experiência é completamente diferente de qualquer outro sítio. É clínica, mas sensorial ao mesmo tempo. Saio sempre renovada por dentro e por fora.",
+    initial: "✦",
+    name: "Cliente Hair Clinic",
+    sub: "Visita inaugural",
+    text: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
   },
   {
-    initial: "I",
-    name: "Inês C.",
-    sub: "Cliente · Programa Mensal",
-    text: "Em três meses de acompanhamento vi uma diferença que anos de produtos nunca me deram. O método funciona porque trata mesmo a origem.",
+    initial: "✦",
+    name: "Cliente · Gaia",
+    sub: "Visita inaugural",
+    text: "Está muito bonito, e como disse, é algo que não temos aqui em Gaia e é bastante necessário. Todos falam em balayages e nas últimas tendências de coloração — é importante, claro, mas ninguém fala que a saúde do couro cabeludo está acima de tudo isso. Trouxeste um conceito totalmente diferente. Não é um simples tratamento de rampa no salão, é uma avaliação profissional e completa. O espaço está lindo! Fugiste do branco e dourado que é comum a todos os espaços. Adorei o estilo, meio Rituals, meio vintage.",
   },
 ];
 

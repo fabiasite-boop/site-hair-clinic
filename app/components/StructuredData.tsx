@@ -122,23 +122,22 @@ const localBusiness = {
     {
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Ana Sofia M." },
+      author: { "@type": "Person", name: "Cliente Hair Clinic" },
       reviewBody:
-        "Finalmente percebi que o meu problema de queda tinha uma causa real. O diagnóstico mudou tudo.",
+        "Está fantástico mesmo. A cara da riqueza, chiquérrimo, muito confortável e super acolhedor. Relaxei completamente, mesmo estando com imensa gente à volta.",
     },
     {
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Margarida F." },
-      reviewBody:
-        "A experiência é completamente diferente de qualquer outro sítio. É clínica, mas sensorial ao mesmo tempo.",
+      author: { "@type": "Person", name: "Cliente Hair Clinic" },
+      reviewBody: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
     },
     {
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Inês C." },
+      author: { "@type": "Person", name: "Cliente Hair Clinic — Gaia" },
       reviewBody:
-        "Em três meses de acompanhamento vi uma diferença que anos de produtos nunca me deram.",
+        "É algo que não temos aqui em Gaia e é bastante necessário. Trouxeste um conceito totalmente diferente. Não é um simples tratamento de rampa no salão, é uma avaliação profissional e completa. O espaço está lindo!",
     },
   ],
 };
