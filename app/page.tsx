@@ -3,7 +3,6 @@ import Nav from "./components/Nav";
 import Reveal from "./components/Reveal";
 import StructuredData from "./components/StructuredData";
 import TreatmentsTabs from "./components/TreatmentsTabs";
-import ContactForm from "./components/ContactForm";
 import { PRICELIST_URL, WHATSAPP_URL, PHONE_DISPLAY, LOCATION_DISPLAY } from "./lib/contact";
 
 const galleryImages = [
@@ -610,58 +609,67 @@ export default function Home() {
         <section
           id="contacto"
           aria-labelledby="contacto-heading"
-          className="mx-auto grid max-w-[1400px] gap-12 px-5 py-20 sm:gap-16 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-20 md:px-14 md:py-36 lg:items-center"
+          className="mx-auto max-w-[1100px] px-5 py-20 text-center sm:px-6 sm:py-24 md:px-14 md:py-36"
         >
-          <div>
-            <Reveal as="p" className="eyebrow">
-              Contacto
-            </Reveal>
-            <Reveal delay={1}>
-              <h2
-                id="contacto-heading"
-                className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
-              >
-                Pronta para começar
-                <br />
-                <em className="italic text-[color:var(--color-green-deep)]">
-                  na raiz?
-                </em>
-              </h2>
-            </Reveal>
-            <Reveal delay={2}>
-              <p className="mt-8 max-w-prose text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
-                Marque a sua consulta de diagnóstico e dê o primeiro passo para
-                um cabelo mais saudável — com ciência, cuidado e uma experiência
-                que não vai esquecer.
-              </p>
-            </Reveal>
-
-            <Reveal delay={3} className="mt-12 flex flex-col gap-4">
-              <ContactItem
-                href={WHATSAPP_URL}
-                external
-                icon="✆"
-                label="Telefone / WhatsApp"
-                value={PHONE_DISPLAY}
-              />
-              <ContactItem
-                href={PRICELIST_URL}
-                external
-                icon="✦"
-                label="Preçário Completo"
-                value="Ver tabela de tratamentos"
-              />
-              <ContactItem
-                href="#galeria"
-                icon="◎"
-                label="Localização"
-                value={LOCATION_DISPLAY}
-              />
-            </Reveal>
-          </div>
-
+          <Reveal as="p" className="eyebrow justify-center">
+            Contacto
+          </Reveal>
+          <Reveal delay={1}>
+            <h2
+              id="contacto-heading"
+              className="mt-6 font-serif text-[clamp(30px,3.6vw,60px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+            >
+              Pronta para começar
+              <br />
+              <em className="italic text-[color:var(--color-green-deep)]">
+                na raiz?
+              </em>
+            </h2>
+          </Reveal>
           <Reveal delay={2}>
-            <ContactForm />
+            <p className="mx-auto mt-8 max-w-xl text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+              Marque a sua consulta de diagnóstico via WhatsApp e dê o primeiro
+              passo para um cabelo mais saudável — com ciência, cuidado e uma
+              experiência que não vai esquecer.
+            </p>
+          </Reveal>
+
+          <Reveal delay={3}>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Marcar consulta via WhatsApp"
+              className="group relative mt-12 inline-flex items-center gap-4 overflow-hidden bg-[color:var(--color-green-deep)] px-10 py-5 text-[11px] uppercase tracking-[0.32em] text-[color:var(--color-cream)] transition-colors hover:bg-[color:var(--color-ink)] focus-visible:bg-[color:var(--color-ink)]"
+            >
+              <span>Marcar Consulta via WhatsApp</span>
+              <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </Reveal>
+
+          <Reveal delay={4} className="mt-16 grid grid-cols-1 gap-3 text-left sm:grid-cols-3 sm:gap-4">
+            <ContactItem
+              href={WHATSAPP_URL}
+              external
+              icon="✆"
+              label="Telefone / WhatsApp"
+              value={PHONE_DISPLAY}
+            />
+            <ContactItem
+              href={PRICELIST_URL}
+              external
+              icon="✦"
+              label="Preçário Completo"
+              value="Ver tabela de tratamentos"
+            />
+            <ContactItem
+              href="#galeria"
+              icon="◎"
+              label="Localização"
+              value={LOCATION_DISPLAY}
+            />
           </Reveal>
         </section>
 
