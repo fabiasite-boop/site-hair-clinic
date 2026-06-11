@@ -30,19 +30,19 @@ const galleryImages = [
 
 const teamMembers = [
   {
-    src: "/photos/equipa/hair-clinic-93.jpg",
+    src: "/photos/equipa/equipa-1.jpg",
     alt: "Membro da equipa Hair Clinic em fardamento da marca, retrato profissional",
     name: "Equipa Hair Clinic",
     role: "Tricologia & Cuidado",
   },
   {
-    src: "/photos/equipa/hair-clinic-92.jpg",
-    alt: "Membro da equipa Hair Clinic em fardamento da marca, retrato profissional",
+    src: "/photos/equipa/equipa-2.jpg",
+    alt: "Membro sénior da equipa Hair Clinic em fardamento da marca, retrato profissional",
     name: "Equipa Hair Clinic",
     role: "Tricologia & Cuidado",
   },
   {
-    src: "/photos/equipa/hair-clinic-96.jpg",
+    src: "/photos/equipa/equipa-3.jpg",
     alt: "Membro da equipa Hair Clinic em fardamento da marca, retrato profissional",
     name: "Equipa Hair Clinic",
     role: "Tricologia & Cuidado",
