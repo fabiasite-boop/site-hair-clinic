@@ -144,14 +144,14 @@ const localBusiness = {
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
       author: { "@type": "Person", name: "Cliente Hair Clinic" },
-      reviewBody: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
+      reviewBody:
+        "É algo que não temos aqui em Gaia e é bastante necessário. Trouxeste um conceito totalmente diferente. Não é um simples tratamento de rampa no salão, é uma avaliação profissional e completa. O espaço está lindo!",
     },
     {
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Cliente Hair Clinic — Gaia" },
-      reviewBody:
-        "É algo que não temos aqui em Gaia e é bastante necessário. Trouxeste um conceito totalmente diferente. Não é um simples tratamento de rampa no salão, é uma avaliação profissional e completa. O espaço está lindo!",
+      author: { "@type": "Person", name: "Cliente Hair Clinic" },
+      reviewBody: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
     },
   ],
 };

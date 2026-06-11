@@ -99,13 +99,13 @@ const testimonials = [
     initial: "✦",
     name: "Cliente Hair Clinic",
     sub: "Visita inaugural",
-    text: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
+    text: "Está muito bonito, e como disse, é algo que não temos aqui em Gaia e é bastante necessário. Todos falam em balayages e nas últimas tendências de coloração — é importante, claro, mas ninguém fala que a saúde do couro cabeludo está acima de tudo isso. Trouxeste um conceito totalmente diferente. Não é um simples tratamento de rampa no salão, é uma avaliação profissional e completa. O espaço está lindo! Fugiste do branco e dourado que é comum a todos os espaços. Adorei o estilo, meio Rituals, meio vintage.",
   },
   {
     initial: "✦",
-    name: "Cliente · Gaia",
+    name: "Cliente Hair Clinic",
     sub: "Visita inaugural",
-    text: "Está muito bonito, e como disse, é algo que não temos aqui em Gaia e é bastante necessário. Todos falam em balayages e nas últimas tendências de coloração — é importante, claro, mas ninguém fala que a saúde do couro cabeludo está acima de tudo isso. Trouxeste um conceito totalmente diferente. Não é um simples tratamento de rampa no salão, é uma avaliação profissional e completa. O espaço está lindo! Fugiste do branco e dourado que é comum a todos os espaços. Adorei o estilo, meio Rituals, meio vintage.",
+    text: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
   },
 ];
 
