@@ -4,6 +4,7 @@ import Reveal from "./components/Reveal";
 import StructuredData from "./components/StructuredData";
 import TreatmentsTabs from "./components/TreatmentsTabs";
 import ContactForm from "./components/ContactForm";
+import { PRICELIST_URL, WHATSAPP_URL, PHONE_DISPLAY, LOCATION_DISPLAY } from "./lib/contact";
 
 const galleryImages = [
   {
@@ -134,20 +135,25 @@ export default function Home() {
                 e o bem-estar — com base em diagnóstico especializado e uma
                 experiência sensorial única.
               </p>
-              <div className="mt-12 flex flex-wrap items-center gap-8 opacity-0 animate-[fadeUp_1s_0.8s_forwards]">
+              <div className="mt-12 flex flex-wrap items-center gap-6 opacity-0 animate-[fadeUp_1s_0.8s_forwards] sm:gap-8">
                 <a
-                  href="#contacto"
-                  className="group relative overflow-hidden bg-[color:var(--color-green-deep)] px-10 py-4 text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-cream)]"
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Marcar diagnóstico via WhatsApp"
+                  className="group relative overflow-hidden bg-[color:var(--color-green-deep)] px-8 py-4 text-[10px] uppercase tracking-[0.32em] text-[color:var(--color-cream)] sm:px-10"
                 >
                   <span className="relative z-10">Marcar Diagnóstico</span>
                   <span className="absolute inset-0 -translate-x-full bg-[color:var(--color-ink)] transition-transform duration-500 group-hover:translate-x-0" />
                 </a>
                 <a
-                  href="#metodo"
+                  href={PRICELIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-gold)]"
                 >
                   <span className="block h-px w-7 bg-[color:var(--color-gold)] transition-all duration-300 group-hover:w-12" />
-                  Descobrir o método
+                  Ver Preçário
                 </a>
               </div>
             </div>
@@ -386,6 +392,25 @@ export default function Home() {
           <Reveal className="mt-14">
             <TreatmentsTabs />
           </Reveal>
+
+          <Reveal delay={2}>
+            <div className="mt-14 flex flex-col items-center gap-5 border-t border-[color:var(--color-beige-dark)] pt-10 text-center sm:flex-row sm:justify-between sm:gap-8 sm:text-left">
+              <p className="max-w-md font-serif text-[20px] font-light italic leading-[1.4] text-[color:var(--color-ink)] sm:text-[22px]">
+                Consulte a tabela completa de tratamentos e valores.
+              </p>
+              <a
+                href={PRICELIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-3 overflow-hidden bg-[color:var(--color-ink)] px-8 py-4 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-cream)] transition-colors hover:bg-[color:var(--color-green-deep)] focus-visible:bg-[color:var(--color-green-deep)]"
+              >
+                <span>Ver Preçário Completo</span>
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+            </div>
+          </Reveal>
         </section>
 
         {/* ──────────────────────────────  QUOTE  ──────────────────────────── */}
@@ -613,22 +638,24 @@ export default function Home() {
 
             <Reveal delay={3} className="mt-12 flex flex-col gap-4">
               <ContactItem
-                href="tel:+351910000000"
+                href={WHATSAPP_URL}
+                external
                 icon="✆"
                 label="Telefone / WhatsApp"
-                value="+351 910 000 000"
+                value={PHONE_DISPLAY}
               />
               <ContactItem
-                href="mailto:info@hairclinic.pt"
-                icon="✉"
-                label="Email"
-                value="info@hairclinic.pt"
+                href={PRICELIST_URL}
+                external
+                icon="✦"
+                label="Preçário Completo"
+                value="Ver tabela de tratamentos"
               />
               <ContactItem
-                href="#"
+                href="#galeria"
                 icon="◎"
                 label="Localização"
-                value="Porto, Portugal"
+                value={LOCATION_DISPLAY}
               />
             </Reveal>
           </div>
@@ -667,7 +694,7 @@ export default function Home() {
                 { label: "Ritual Introdutório", href: "#tratamentos" },
                 { label: "Ritual Intensivo", href: "#tratamentos" },
                 { label: "Ritual Premium", href: "#tratamentos" },
-                { label: "Experiências Corpo", href: "#tratamentos" },
+                { label: "Preçário", href: PRICELIST_URL, external: true },
               ]}
             />
             <FooterCol
@@ -676,7 +703,7 @@ export default function Home() {
                 { label: "Sobre Nós", href: "#sobre" },
                 { label: "O Método", href: "#metodo" },
                 { label: "Testemunhos", href: "#testemunhos" },
-                { label: "Marcações", href: "#contacto" },
+                { label: "Marcar Consulta", href: WHATSAPP_URL, external: true },
               ]}
             />
             <div>
@@ -684,21 +711,16 @@ export default function Home() {
                 Contacto
               </h2>
               <address className="text-[13px] not-italic leading-[1.95] text-white/45">
-                Porto, Portugal
+                {LOCATION_DISPLAY}
                 <br />
                 <br />
                 <a
-                  href="tel:+351910000000"
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-white"
                 >
-                  +351 910 000 000
-                </a>
-                <br />
-                <a
-                  href="mailto:info@hairclinic.pt"
-                  className="transition-colors hover:text-white"
-                >
-                  info@hairclinic.pt
+                  {PHONE_DISPLAY}
                 </a>
                 <br />
                 <br />
@@ -744,16 +766,19 @@ function ContactItem({
   icon,
   label,
   value,
+  external,
 }: {
   href: string;
   icon: string;
   label: string;
   value: string;
+  external?: boolean;
 }) {
   return (
     <a
       href={href}
       aria-label={`${label}: ${value}`}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className="group flex items-center gap-5 border border-[color:var(--color-beige-dark)] p-5 transition-all hover:border-[color:var(--color-green-deep)] hover:bg-[color:var(--color-beige)] focus-visible:border-[color:var(--color-green-deep)] focus-visible:bg-[color:var(--color-beige)]"
     >
       <div
@@ -777,7 +802,7 @@ function FooterCol({
   items,
 }: {
   title: string;
-  items: { label: string; href: string }[];
+  items: { label: string; href: string; external?: boolean }[];
 }) {
   return (
     <nav aria-label={title}>
@@ -789,6 +814,7 @@ function FooterCol({
           <li key={i.label}>
             <a
               href={i.href}
+              {...(i.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="text-[13px] text-white/45 transition-colors hover:text-white focus-visible:text-white focus-visible:outline-none"
             >
               {i.label}

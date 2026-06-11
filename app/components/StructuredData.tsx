@@ -1,19 +1,33 @@
 const SITE_URL = "https://hairclinic.pt";
+const WHATSAPP_URL = "https://wa.link/86w4c5";
+const PRICELIST_URL = "https://hairclinic-pt.my.canva.site/";
 
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
   "@id": `${SITE_URL}/#business`,
   name: "Hair Clinic by Fábia Oliveira",
-  alternateName: "Hair Clinic Porto",
+  alternateName: "Hair Clinic Gaia",
   description:
-    "Clínica capilar especializada em tricologia, diagnóstico avançado por microcâmara e rituais sensoriais para o couro cabeludo.",
+    "Clínica capilar especializada em tricologia, diagnóstico avançado por microcâmara e rituais sensoriais para o couro cabeludo em Vila Nova de Gaia.",
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   image: [`${SITE_URL}/og-image.png`],
-  telephone: "+351-910-000-000",
-  email: "info@hairclinic.pt",
+  telephone: "+351-910-520-813",
   priceRange: "€€€",
+  hasMenu: PRICELIST_URL,
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: WHATSAPP_URL,
+      actionPlatform: [
+        "https://schema.org/DesktopWebPlatform",
+        "https://schema.org/MobileWebPlatform",
+      ],
+    },
+    result: { "@type": "Reservation", name: "Marcação Hair Clinic" },
+  },
   founder: {
     "@type": "Person",
     name: "Fábia Oliveira",
@@ -21,14 +35,14 @@ const localBusiness = {
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Porto",
+    addressLocality: "Vila Nova de Gaia",
     addressRegion: "Porto",
     addressCountry: "PT",
   },
-  areaServed: {
-    "@type": "City",
-    name: "Porto",
-  },
+  areaServed: [
+    { "@type": "City", name: "Vila Nova de Gaia" },
+    { "@type": "City", name: "Porto" },
+  ],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -195,7 +209,7 @@ const faq = {
       name: "Onde fica a clínica?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A Hair Clinic by Fábia Oliveira fica no Porto, Portugal. Para marcações: +351 910 000 000 ou info@hairclinic.pt.",
+        text: "A Hair Clinic by Fábia Oliveira fica em Vila Nova de Gaia, Portugal. Para marcações: +351 910 520 813 (WhatsApp).",
       },
     },
   ],

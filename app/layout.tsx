@@ -23,30 +23,33 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Hair Clinic by Fábia Oliveira | Tricologia & Tratamentos Capilares no Porto",
+      "Hair Clinic by Fábia Oliveira | Tricologia & Tratamentos Capilares em Gaia",
     template: "%s | Hair Clinic by Fábia Oliveira",
   },
   description:
-    "Clínica capilar especializada em tricologia, diagnóstico avançado por microcâmara e rituais sensoriais. Tratamentos para queda de cabelo, oleosidade e couro cabeludo no Porto. Marque a sua consulta.",
+    "Clínica capilar especializada em tricologia, diagnóstico avançado por microcâmara e rituais sensoriais. Tratamentos para queda de cabelo, oleosidade e couro cabeludo em Vila Nova de Gaia. Marque a sua consulta via WhatsApp.",
   applicationName: "Hair Clinic by Fábia Oliveira",
   authors: [{ name: "Fábia Oliveira" }],
   generator: "Next.js",
   keywords: [
+    "tricologia Gaia",
     "tricologia Porto",
-    "clínica capilar Porto",
-    "tratamento queda cabelo",
+    "clínica capilar Gaia",
+    "clínica capilar Vila Nova de Gaia",
+    "tratamento queda cabelo Gaia",
     "tratamento couro cabeludo",
     "diagnóstico capilar",
     "microcâmara capilar",
     "tratamento oleosidade cabelo",
     "dermatite seborreica",
-    "ritual capilar Porto",
+    "ritual capilar Gaia",
     "Fábia Oliveira",
-    "Hair Clinic Porto",
+    "Hair Clinic Gaia",
+    "Hair Clinic Vila Nova de Gaia",
     "saúde capilar",
     "LED tricologia",
     "anamnese capilar",
-    "spa capilar Porto",
+    "spa capilar Gaia",
   ],
   referrer: "origin-when-cross-origin",
   creator: "Hair Clinic by Fábia Oliveira",
@@ -70,7 +73,7 @@ export const metadata: Metadata = {
     title:
       "Hair Clinic by Fábia Oliveira | Tricologia & Tratamentos Capilares",
     description:
-      "Clínica capilar especializada em tricologia e diagnóstico avançado. Onde o cuidado começa na raiz. Porto, Portugal.",
+      "Clínica capilar especializada em tricologia e diagnóstico avançado. Onde o cuidado começa na raiz. Gaia, Portugal.",
     images: [
       {
         url: "/og-image.png",
@@ -85,7 +88,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hair Clinic by Fábia Oliveira | Tricologia & Ritual Capilar",
     description:
-      "Clínica capilar especializada em tricologia e diagnóstico avançado por microcâmara. Porto.",
+      "Clínica capilar especializada em tricologia e diagnóstico avançado por microcâmara. Vila Nova de Gaia.",
     images: ["/og-image.png"],
   },
   robots: {

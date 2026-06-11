@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { PRICELIST_URL, WHATSAPP_URL } from "../lib/contact";
 
 const links = [
   { href: "#sobre", label: "A Clínica" },
@@ -91,12 +92,25 @@ export default function Nav() {
           ))}
         </ul>
 
-        <a
-          href="#contacto"
-          className="hidden lg:inline-block bg-[color:var(--color-ink)] px-6 py-3 text-[10px] font-normal uppercase tracking-[0.3em] text-[color:var(--color-cream)] transition-colors hover:bg-[color:var(--color-green-deep)] focus-visible:bg-[color:var(--color-green-deep)]"
-        >
-          Marcar Consulta
-        </a>
+        <div className="hidden items-center gap-5 lg:flex">
+          <a
+            href={PRICELIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-light uppercase tracking-[0.22em] text-[color:var(--color-text)] transition-colors hover:text-[color:var(--color-gold)] focus-visible:text-[color:var(--color-gold)]"
+          >
+            Preçário
+          </a>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Marcar consulta via WhatsApp"
+            className="bg-[color:var(--color-ink)] px-6 py-3 text-[10px] font-normal uppercase tracking-[0.3em] text-[color:var(--color-cream)] transition-colors hover:bg-[color:var(--color-green-deep)] focus-visible:bg-[color:var(--color-green-deep)]"
+          >
+            Marcar Consulta
+          </a>
+        </div>
 
         <button
           type="button"
@@ -152,7 +166,20 @@ export default function Nav() {
           ))}
           <li>
             <a
-              href="#contacto"
+              href={PRICELIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="block border-b border-[color:var(--color-beige-dark)] py-5 text-[12px] uppercase tracking-[0.24em] text-[color:var(--color-text)]"
+            >
+              Preçário
+            </a>
+          </li>
+          <li>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-5 inline-block bg-[color:var(--color-ink)] px-8 py-4 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-cream)]"
             >
