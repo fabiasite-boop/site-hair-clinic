@@ -28,6 +28,27 @@ const galleryImages = [
   },
 ];
 
+const teamMembers = [
+  {
+    src: "/photos/equipa/hair-clinic-93.jpg",
+    alt: "Membro da equipa Hair Clinic em fardamento da marca, retrato profissional",
+    name: "Equipa Hair Clinic",
+    role: "Tricologia & Cuidado",
+  },
+  {
+    src: "/photos/equipa/hair-clinic-92.jpg",
+    alt: "Membro da equipa Hair Clinic em fardamento da marca, retrato profissional",
+    name: "Equipa Hair Clinic",
+    role: "Tricologia & Cuidado",
+  },
+  {
+    src: "/photos/equipa/hair-clinic-96.jpg",
+    alt: "Membro da equipa Hair Clinic em fardamento da marca, retrato profissional",
+    name: "Equipa Hair Clinic",
+    role: "Tricologia & Cuidado",
+  },
+];
+
 const pillars = [
   { icon: "✦", title: "Diagnóstico", desc: "Avaliação com microcâmara e tecnologia avançada" },
   { icon: "❋", title: "Tricologia", desc: "Tratamentos com base científica e clínica" },
@@ -291,6 +312,65 @@ export default function Home() {
               <p className="mt-1 text-[12px] opacity-75">Oliveira</p>
             </div>
           </Reveal>
+        </section>
+
+        {/* ───────────────────────────────  EQUIPA  ────────────────────────── */}
+        <section
+          id="equipa"
+          aria-labelledby="equipa-heading"
+          className="mx-auto max-w-[1400px] px-5 pb-20 sm:px-6 sm:pb-24 md:px-14 md:pb-36"
+        >
+          <div className="mx-auto max-w-2xl text-center">
+            <Reveal as="p" className="eyebrow justify-center">
+              A Equipa
+            </Reveal>
+            <Reveal delay={1}>
+              <h2
+                id="equipa-heading"
+                className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+              >
+                As mãos que
+                <br />
+                <em className="italic text-[color:var(--color-green-deep)]">
+                  cuidam de si.
+                </em>
+              </h2>
+            </Reveal>
+            <Reveal delay={2}>
+              <p className="mx-auto mt-8 max-w-lg text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                Por trás de cada ritual há uma equipa especializada — formada em
+                tricologia, dedicada ao detalhe e ao acolhimento que define a
+                Hair Clinic.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
+            {teamMembers.map((m, i) => (
+              <Reveal key={m.src} delay={(i % 3) as 0 | 1 | 2}>
+                <article className="group">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-[color:var(--color-beige)]">
+                    <Image
+                      src={m.src}
+                      alt={m.alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={85}
+                      className="object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    />
+                  </div>
+                  <div className="mt-5 border-t border-[color:var(--color-beige-dark)] pt-5">
+                    <p className="text-[9px] uppercase tracking-[0.35em] text-[color:var(--color-gold)]">
+                      {m.role}
+                    </p>
+                    <h3 className="mt-2 font-serif text-[22px] font-light text-[color:var(--color-ink)] sm:text-[24px]">
+                      {m.name}
+                    </h3>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* ───────────────────────────────  MÉTODO  ────────────────────────── */}
