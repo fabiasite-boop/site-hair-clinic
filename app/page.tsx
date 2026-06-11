@@ -338,9 +338,8 @@ export default function Home() {
             </Reveal>
             <Reveal delay={2}>
               <p className="mx-auto mt-8 max-w-lg text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
-                Por trás de cada ritual há uma equipa especializada — formada em
-                tricologia, dedicada ao detalhe e ao acolhimento que define a
-                Hair Clinic.
+                Por trás de cada detalhe há uma equipa especializada — dedicada
+                ao detalhe e ao acolhimento que define a Hair Clinic.
               </p>
             </Reveal>
           </div>
