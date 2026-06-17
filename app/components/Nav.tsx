@@ -8,8 +8,10 @@ const links = [
   { href: "#sobre", label: "A Clínica" },
   { href: "#metodo", label: "O Método" },
   { href: "#tratamentos", label: "Tratamentos" },
+  { href: "#resultados", label: "Resultados" },
   { href: "#galeria", label: "Espaço" },
   { href: "#testemunhos", label: "Testemunhos" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function Nav() {
@@ -75,7 +77,7 @@ export default function Nav() {
           />
         </a>
 
-        <ul className="hidden items-center gap-8 lg:flex lg:gap-10">
+        <ul className="hidden items-center gap-7 xl:flex 2xl:gap-9">
           {links.map((l) => (
             <li key={l.href}>
               <a
@@ -92,7 +94,7 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-5 xl:flex">
           <a
             href={PRICELIST_URL}
             target="_blank"
@@ -118,7 +120,7 @@ export default function Nav() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 xl:hidden"
         >
           <span
             aria-hidden="true"
@@ -148,11 +150,11 @@ export default function Nav() {
         aria-modal="true"
         aria-label="Menu de navegação"
         hidden={!open}
-        className={`lg:hidden overflow-hidden transition-[max-height] duration-500 ${
+        className={`xl:hidden overflow-hidden transition-[max-height] duration-500 ${
           open ? "max-h-[80vh]" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col gap-1 bg-[color:var(--color-cream)] px-5 pb-8 pt-2 sm:px-6">
+        <ul className="flex max-h-[80vh] flex-col gap-1 overflow-y-auto bg-[color:var(--color-cream)] px-5 pb-8 pt-2 sm:px-6">
           {links.map((l) => (
             <li key={l.href}>
               <a

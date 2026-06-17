@@ -1,3 +1,5 @@
+import { faqItems } from "../lib/faq";
+
 const SITE_URL = "https://hairclinic.pt";
 const WHATSAPP_URL = "https://wa.link/86w4c5";
 const PRICELIST_URL = "https://hairclinic-pt.my.canva.site/";
@@ -32,6 +34,16 @@ const localBusiness = {
     "@type": "Person",
     name: "Fábia Oliveira",
     jobTitle: "Tricologista",
+    description:
+      "Cabeleireira profissional há 6 anos, com formação especializada em tricologia há 3 anos e experiência na área da estética desde os 18 anos. Especialização em diagnóstico capilar avançado e tricoscopia digital.",
+    knowsAbout: [
+      "Tricologia",
+      "Tricoscopia Digital",
+      "Queda capilar",
+      "Dermatite seborreica",
+      "Saúde do couro cabeludo",
+      "Recuperação da fibra capilar",
+    ],
   },
   address: {
     "@type": "PostalAddress",
@@ -168,51 +180,15 @@ const website = {
   publisher: { "@id": `${SITE_URL}/#business` },
 };
 
+// Mirrors the on-page #faq section (single source of truth in app/lib/faq.ts)
 const faq = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "O que é tricologia?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tricologia é o ramo da dermatologia dedicado ao estudo e tratamento do couro cabeludo e do cabelo. Na Hair Clinic, abordamos cada caso com diagnóstico avançado por microcâmara para identificar a origem dos problemas — queda, oleosidade, dermatite ou caspa — antes de propor qualquer tratamento.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Como é feito o diagnóstico capilar?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "O diagnóstico começa com uma anamnese completa do histórico, rotinas e estilo de vida. Em seguida usamos microcâmara de alta ampliação para examinar o couro cabeludo, a densidade folicular e o estado dos fios. Com base nessa avaliação, criamos um plano de tratamento personalizado.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Quanto tempo demora a ver resultados?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Os primeiros sinais de melhoria — couro cabeludo mais equilibrado, menos oleosidade, redução de comichão — costumam aparecer entre 4 e 8 semanas. Resultados visíveis no cabelo (densidade, brilho, redução de queda) tipicamente entre 3 e 6 meses de acompanhamento consistente.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "A Hair Clinic é um salão de cabeleireiro?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Não. A Hair Clinic é um espaço clínico especializado em tricologia. Não fazemos corte, coloração nem alisamentos. Focamo-nos exclusivamente na saúde do couro cabeludo e do cabelo, com protocolos baseados em ciência tricológica.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Onde fica a clínica?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A Hair Clinic by Fábia Oliveira fica em Vila Nova de Gaia, Portugal. Para marcações: +351 910 520 813 (WhatsApp).",
-      },
-    },
-  ],
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 export default function StructuredData() {

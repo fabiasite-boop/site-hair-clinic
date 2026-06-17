@@ -4,6 +4,7 @@ import Reveal from "./components/Reveal";
 import StructuredData from "./components/StructuredData";
 import TreatmentsTabs from "./components/TreatmentsTabs";
 import { PRICELIST_URL, WHATSAPP_URL, PHONE_DISPLAY, LOCATION_DISPLAY } from "./lib/contact";
+import { faqItems } from "./lib/faq";
 
 const galleryImages = [
   {
@@ -107,6 +108,114 @@ const testimonials = [
     sub: "Visita inaugural",
     text: "Adorei! O espaço é muito muito lindo, mesmo relaxante.",
   },
+];
+
+const percurso = [
+  "Cabeleireira profissional há 6 anos",
+  "Formação especializada em Tricologia há 3 anos",
+  "Experiência na área da estética desde os 18 anos",
+  "Formação contínua em saúde capilar, couro cabeludo e recuperação da fibra capilar",
+  "Especialização em diagnóstico capilar avançado",
+  "Protocolos personalizados de tratamento capilar e bem-estar",
+  "Diagnóstico através de tricoscopia digital",
+];
+
+const areasAtuacao = [
+  "Queda capilar",
+  "Dermatite seborreica",
+  "Psoríase",
+  "Sensibilidade do couro cabeludo",
+  "Oleosidade excessiva",
+  "Descamação",
+  "Recuperação da fibra capilar",
+  "Saúde e equilíbrio do couro cabeludo",
+];
+
+const tecnologias = [
+  "Tricoscopia Digital",
+  "LED Terapêutico",
+  "Diagnóstico Digital Capilar",
+  "Protocolos Detox",
+  "Aromaterapia Aplicada",
+  "Terapias Complementares de Bem-Estar",
+];
+
+const porqueEscolher = [
+  "Diagnóstico tricológico especializado",
+  "Protocolos personalizados",
+  "Tecnologia de análise capilar",
+  "Acompanhamento contínuo",
+  "Integração entre saúde capilar e bem-estar",
+  "Ambiente exclusivo e acolhedor",
+  "Experiência profissional em cabeleireiro, estética e tricologia",
+];
+
+const partilhadas = ["Casais", "Amigos", "Mãe e Filha", "Irmãs", "Familiares"];
+
+const caso1Photos = [
+  {
+    src: "/photos/casos/caso-1/antes-1.jpg",
+    alt: "Couro cabeludo com rarefação capilar avançada na zona superior, antes do tratamento — caso clínico Hair Clinic",
+    tag: "Antes",
+  },
+  {
+    src: "/photos/casos/caso-1/antes-2.jpg",
+    alt: "Vista superior do couro cabeludo com elevada transparência capilar, antes do tratamento — caso clínico Hair Clinic",
+    tag: "Antes",
+  },
+  {
+    src: "/photos/casos/caso-1/depois-1.jpg",
+    alt: "Couro cabeludo com densidade capilar visivelmente recuperada após o tratamento — caso clínico Hair Clinic",
+    tag: "Depois",
+  },
+  {
+    src: "/photos/casos/caso-1/depois-2.jpg",
+    alt: "Cobertura capilar mais homogénea e fios mais espessos após o tratamento — caso clínico Hair Clinic",
+    tag: "Depois",
+  },
+] as const;
+
+const caso1Plano = [
+  "Diagnóstico tricológico especializado",
+  "Protocolos personalizados de estimulação capilar",
+  "Terapias de fortalecimento da fibra capilar",
+  "Acompanhamento regular da evolução clínica",
+  "Plano domiciliário adaptado às necessidades da cliente",
+];
+
+const caso1Resultados = [
+  "Maior densidade capilar",
+  "Redução da visibilidade do couro cabeludo",
+  "Melhoria da qualidade e espessura dos fios",
+  "Cobertura capilar mais homogénea",
+  "Evolução documentada através de acompanhamento fotográfico e tricológico",
+];
+
+const caso2Photos = [
+  {
+    src: "/photos/casos/caso-2/evolucao-1.jpg",
+    alt: "Comparação fotográfica da evolução da densidade capilar na zona superior da cabeça — caso clínico Hair Clinic",
+  },
+  {
+    src: "/photos/casos/caso-2/evolucao-2.jpg",
+    alt: "Comparação fotográfica do aumento de volume e cobertura capilar durante o acompanhamento — caso clínico Hair Clinic",
+  },
+] as const;
+
+const caso2Protocolo = [
+  "Diagnóstico tricológico personalizado",
+  "Plano domiciliário individualizado",
+  "Acompanhamento especializado contínuo",
+  "Protocolos de fortalecimento e recuperação capilar",
+  "Monitorização fotográfica da evolução",
+];
+
+const caso2Resultados = [
+  "Aumento da densidade capilar",
+  "Redução da visibilidade do couro cabeludo",
+  "Melhoria da qualidade e resistência da fibra capilar",
+  "Maior volume visual",
+  "Evolução documentada através de acompanhamento fotográfico",
 ];
 
 export default function Home() {
@@ -227,6 +336,68 @@ export default function Home() {
           </div>
         </div>
 
+        {/* ─────────────────────────────  MANIFESTO  ───────────────────────── */}
+        <section
+          id="manifesto"
+          aria-labelledby="manifesto-heading"
+          className="mx-auto max-w-[900px] px-5 py-20 text-center sm:px-6 sm:py-24 md:py-32"
+        >
+          <Reveal as="p" className="eyebrow justify-center">
+            Hair Clinic by Fábia Oliveira
+          </Reveal>
+          <Reveal delay={1}>
+            <h2
+              id="manifesto-heading"
+              className="mt-6 font-serif text-[clamp(28px,3.2vw,52px)] font-light leading-[1.2] text-[color:var(--color-ink)]"
+            >
+              Onde a tricologia clínica encontra
+              <br />
+              <em className="italic text-[color:var(--color-green-deep)]">
+                o bem-estar terapêutico.
+              </em>
+            </h2>
+          </Reveal>
+          <Reveal delay={2}>
+            <div className="mx-auto mt-10 flex max-w-2xl flex-col gap-5 text-[14.5px] leading-[2] text-[color:var(--color-text-soft)]">
+              <p>
+                Na Hair Clinic acreditamos que a verdadeira saúde capilar
+                começa pela compreensão da sua origem.
+              </p>
+              <p>
+                Unimos diagnóstico tricológico avançado, protocolos
+                personalizados e experiências de bem-estar cuidadosamente
+                desenhadas para restaurar o equilíbrio do couro cabeludo,
+                fortalecer a fibra capilar e promover resultados duradouros.
+              </p>
+              <p>
+                Cada tratamento é construído com base numa avaliação
+                detalhada, combinando ciência, tecnologia e acompanhamento
+                especializado com momentos de relaxamento e cuidado profundo.
+              </p>
+              <p className="font-serif text-[20px] font-light italic leading-[1.7] text-[color:var(--color-ink)]">
+                Mais do que tratar o cabelo, cuidamos da pessoa como um todo.
+              </p>
+              <p>
+                Num espaço exclusivo e acolhedor, criamos experiências que
+                transformam a saúde capilar, devolvem confiança e elevam o
+                bem-estar físico e emocional.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={3}>
+            <div
+              aria-hidden
+              className="mx-auto mt-12 h-px w-16 bg-[color:var(--color-gold)]"
+            />
+            <p className="mt-8 font-serif text-[clamp(20px,2.4vw,30px)] font-light italic text-[color:var(--color-ink)]">
+              Diagnosticar. Tratar. Recuperar.{" "}
+              <span className="text-[color:var(--color-green-deep)]">
+                Transformar.
+              </span>
+            </p>
+          </Reveal>
+        </section>
+
         {/* ───────────────────────────────  SOBRE  ─────────────────────────── */}
         <section
           id="sobre"
@@ -312,6 +483,163 @@ export default function Home() {
               <p className="mt-1 text-[12px] opacity-75">Oliveira</p>
             </div>
           </Reveal>
+        </section>
+
+        {/* ─────────────────────────────  FUNDADORA  ───────────────────────── */}
+        <section
+          id="fundadora"
+          aria-labelledby="fundadora-heading"
+          className="bg-[color:var(--color-beige)] py-20 sm:py-24 md:py-36"
+        >
+          <div className="mx-auto grid max-w-[1400px] gap-14 px-5 sm:px-6 md:grid-cols-[5fr_7fr] md:gap-20 md:px-14 lg:gap-24">
+            <Reveal className="relative self-start md:sticky md:top-32">
+              <div className="relative aspect-[3/4] w-full overflow-hidden">
+                <Image
+                  src="/photos/Hair-Clinic-89.jpg"
+                  alt="Fábia Oliveira, fundadora e tricologista da Hair Clinic, em fardamento da marca"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+              <div
+                aria-hidden
+                className="absolute -right-4 top-8 h-24 w-24 border border-[color:var(--color-gold)] opacity-50"
+              />
+              <div className="absolute -bottom-6 left-5 bg-[color:var(--color-green-deep)] px-7 py-6 text-[color:var(--color-cream)] sm:left-8">
+                <p className="text-[9px] uppercase tracking-[0.35em] opacity-60">
+                  Fundadora &amp; Tricologista
+                </p>
+                <p className="mt-1 font-serif text-[26px] font-light leading-none">
+                  Fábia Oliveira
+                </p>
+              </div>
+            </Reveal>
+
+            <div>
+              <Reveal as="p" className="eyebrow">
+                A Fundadora
+              </Reveal>
+              <Reveal delay={1}>
+                <h2
+                  id="fundadora-heading"
+                  className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                >
+                  A minha história começou
+                  <br />
+                  <em className="italic text-[color:var(--color-green-deep)]">
+                    muito antes da tricologia.
+                  </em>
+                </h2>
+              </Reveal>
+              <Reveal delay={2}>
+                <div className="mt-8 flex max-w-prose flex-col gap-5 text-[14.5px] leading-[2] text-[color:var(--color-text-soft)]">
+                  <p>
+                    Aos 18 anos iniciei o meu percurso profissional na área da
+                    estética, desenvolvendo experiência em cuidados de mãos,
+                    pés, corpo e bem-estar.
+                  </p>
+                  <p>
+                    Ao longo dos anos percebi que a verdadeira transformação
+                    acontece quando conseguimos unir conhecimento técnico,
+                    acompanhamento próximo e resultados reais.
+                  </p>
+                  <p>
+                    Há 6 anos iniciei o meu percurso como cabeleireira
+                    profissional e, motivada pela vontade de compreender a
+                    origem dos problemas capilares, aprofundei os meus estudos
+                    na área da tricologia, onde me especializo há mais de 3
+                    anos.
+                  </p>
+                  <p>
+                    A Hair Clinic nasceu dessa visão: criar um espaço onde
+                    ciência, tecnologia, saúde capilar e bem-estar coexistem em
+                    perfeita harmonia.
+                  </p>
+                  <p>
+                    A nossa missão é proporcionar diagnósticos precisos,
+                    tratamentos personalizados e experiências diferenciadoras
+                    que devolvam confiança, autoestima e qualidade de vida aos
+                    nossos clientes.
+                  </p>
+                  <p>
+                    Mais do que tratar cabelos, procuramos compreender pessoas,
+                    acompanhar histórias e criar resultados duradouros.
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={3}>
+                <blockquote className="mt-10 border-l-2 border-[color:var(--color-gold)] pl-6 font-serif text-[20px] font-light italic leading-[1.6] text-[color:var(--color-ink)] sm:text-[23px]">
+                  Porque cada couro cabeludo tem uma história. E cada história
+                  merece ser cuidada de forma única.
+                </blockquote>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────────────────  AUTORIDADE CLÍNICA  ──────────────────── */}
+        <section
+          id="autoridade"
+          aria-labelledby="autoridade-heading"
+          className="mx-auto max-w-[1400px] px-5 py-20 sm:px-6 sm:py-24 md:px-14 md:py-36"
+        >
+          <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-2 md:gap-20">
+            <div>
+              <Reveal as="p" className="eyebrow">
+                Autoridade Clínica
+              </Reveal>
+              <Reveal delay={1}>
+                <h2
+                  id="autoridade-heading"
+                  className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                >
+                  Formação, técnica
+                  <br />
+                  <em className="italic text-[color:var(--color-green-deep)]">
+                    e método clínico.
+                  </em>
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={2}>
+              <p className="text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                A Hair Clinic diferencia-se por unir a tricologia à
+                experiência adquirida ao longo de anos na área da estética e
+                do bem-estar, proporcionando uma abordagem integrada e
+                personalizada à saúde capilar.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-px bg-[color:var(--color-beige-dark)] sm:grid-cols-2 lg:grid-cols-4">
+            <Reveal className="relative hidden overflow-hidden lg:block">
+              <Image
+                src="/photos/Hair-Clinic-140.jpg"
+                alt="LED terapêutico aplicado em tratamento capilar na Hair Clinic"
+                fill
+                sizes="25vw"
+                className="object-cover"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-ink)]/60 via-transparent to-transparent"
+              />
+              <div className="absolute bottom-0 left-0 p-8 text-[color:var(--color-cream)]">
+                <p className="text-[9px] uppercase tracking-[0.32em] opacity-70">
+                  Fábia Oliveira
+                </p>
+                <p className="mt-1 font-serif text-[20px] font-light leading-snug">
+                  Tricologia com base
+                  <br />
+                  em diagnóstico.
+                </p>
+              </div>
+            </Reveal>
+            <AuthorityCol title="Percurso & Formação" items={percurso} delay={1} />
+            <AuthorityCol title="Áreas de Atuação" items={areasAtuacao} delay={2} />
+            <AuthorityCol title="Tecnologias Utilizadas" items={tecnologias} delay={3} />
+          </div>
         </section>
 
         {/* ───────────────────────────────  EQUIPA  ────────────────────────── */}
@@ -434,6 +762,18 @@ export default function Home() {
           </div>
         </section>
 
+        <CtaBand
+          variant="green"
+          line={
+            <>
+              Pronta para conhecer a origem
+              <br className="hidden md:block" /> do seu problema capilar?
+            </>
+          }
+          primary="Marcar Diagnóstico"
+          secondary="Falar com Especialista"
+        />
+
         {/* ─────────────────────────────  TRATAMENTOS  ─────────────────────── */}
         <section
           id="tratamentos"
@@ -491,6 +831,65 @@ export default function Home() {
           </Reveal>
         </section>
 
+        {/* ──────────────────────  EXPERIÊNCIAS PARTILHADAS  ───────────────── */}
+        <section
+          id="partilhadas"
+          aria-labelledby="partilhadas-heading"
+          className="bg-[color:var(--color-beige)] py-20 sm:py-24 md:py-32"
+        >
+          <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 sm:px-6 md:grid-cols-2 md:gap-24 md:px-14">
+            <div>
+              <Reveal as="p" className="eyebrow">
+                Experiências Partilhadas
+              </Reveal>
+              <Reveal delay={1}>
+                <h2
+                  id="partilhadas-heading"
+                  className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                >
+                  O autocuidado também
+                  <br />
+                  <em className="italic text-[color:var(--color-green-deep)]">
+                    se vive em conjunto.
+                  </em>
+                </h2>
+              </Reveal>
+              <Reveal delay={2}>
+                <p className="mt-8 max-w-prose text-[14.5px] leading-[2] text-[color:var(--color-text-soft)]">
+                  Na Hair Clinic acreditamos que o autocuidado também pode ser
+                  vivido em conjunto.
+                </p>
+                <p className="mt-5 max-w-prose text-[14.5px] leading-[2] text-[color:var(--color-text-soft)]">
+                  Criámos experiências para duas pessoas, realizadas numa sala
+                  partilhada, proporcionando momentos únicos de bem-estar,
+                  relaxamento e conexão.
+                </p>
+              </Reveal>
+            </div>
+
+            <Reveal delay={2}>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+                Disponível para
+              </p>
+              <ul className="mt-6">
+                {partilhadas.map((p, i) => (
+                  <li
+                    key={p}
+                    className="group flex items-baseline gap-6 border-b border-[color:var(--color-beige-dark)] py-5 transition-colors hover:border-[color:var(--color-gold)] first:border-t first:border-t-[color:var(--color-beige-dark)]"
+                  >
+                    <span className="font-serif text-[13px] tracking-[0.25em] text-[color:var(--color-gold)]">
+                      0{i + 1}
+                    </span>
+                    <span className="font-serif text-[22px] font-light text-[color:var(--color-ink)] sm:text-[26px]">
+                      {p}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+
         {/* ──────────────────────────────  QUOTE  ──────────────────────────── */}
         <section
           aria-label="Manifesto da Hair Clinic"
@@ -519,6 +918,345 @@ export default function Home() {
               </p>
             </Reveal>
           </div>
+        </section>
+
+        {/* ──────────────────────────  RESULTADOS REAIS  ───────────────────── */}
+        <section
+          id="resultados"
+          aria-labelledby="resultados-heading"
+          className="mx-auto max-w-[1400px] px-5 py-20 sm:px-6 sm:py-24 md:px-14 md:py-36"
+        >
+          <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-2 md:gap-20">
+            <div>
+              <Reveal as="p" className="eyebrow">
+                Resultados Reais
+              </Reveal>
+              <Reveal delay={1}>
+                <h2
+                  id="resultados-heading"
+                  className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                >
+                  Casos clínicos
+                  <br />
+                  <em className="italic text-[color:var(--color-green-deep)]">
+                    documentados.
+                  </em>
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={2}>
+              <p className="text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                Evoluções acompanhadas com fotografia e tricoscopia digital,
+                do primeiro diagnóstico ao resultado. Cada caso é único — e
+                cada plano nasce de uma avaliação detalhada.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* ── Caso 01 ── */}
+          <article
+            aria-label="Caso clínico 01 — Recuperação da densidade capilar"
+            className="mt-16 border-t border-[color:var(--color-beige-dark)] pt-14 md:mt-20"
+          >
+            <Reveal>
+              <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+                <span className="font-serif text-[14px] tracking-[0.25em] text-[color:var(--color-gold)]">
+                  CASO 01
+                </span>
+                <h3 className="font-serif text-[clamp(24px,2.6vw,38px)] font-light text-[color:var(--color-ink)]">
+                  Recuperação da Densidade Capilar
+                </h3>
+              </div>
+            </Reveal>
+
+            <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+              <Reveal className="self-start lg:sticky lg:top-28">
+                <div className="grid grid-cols-2 gap-2">
+                  {caso1Photos.map((photo) => (
+                    <div
+                      key={photo.src}
+                      className="relative aspect-[3/4] overflow-hidden bg-[color:var(--color-beige)]"
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(max-width: 1024px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                      <span
+                        className={`absolute left-3 top-3 px-3 py-1.5 text-[9px] uppercase tracking-[0.28em] ${
+                          photo.tag === "Antes"
+                            ? "bg-[color:var(--color-cream)]/90 text-[color:var(--color-text)]"
+                            : "bg-[color:var(--color-green-deep)]/90 text-[color:var(--color-cream)]"
+                        }`}
+                      >
+                        {photo.tag}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 text-[10px] uppercase tracking-[0.25em] text-[color:var(--color-text-soft)]">
+                  Período de evolução: 21 de fevereiro a 11 de junho de 2025
+                </p>
+              </Reveal>
+
+              <div className="flex flex-col gap-9">
+                <Reveal delay={1}>
+                  <CaseLabel>Situação Inicial</CaseLabel>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    Cliente com rarefação capilar avançada e diminuição
+                    significativa da densidade na zona superior do couro
+                    cabeludo, apresentando elevada transparência capilar e
+                    afinamento progressivo da fibra.
+                  </p>
+                </Reveal>
+                <Reveal delay={1}>
+                  <CaseLabel>Avaliação Tricológica</CaseLabel>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    Através de diagnóstico tricológico e tricoscopia digital
+                    foi identificada uma redução importante da densidade
+                    capilar, exigindo um plano terapêutico personalizado e
+                    acompanhamento contínuo.
+                  </p>
+                </Reveal>
+                <Reveal delay={2}>
+                  <CaseLabel>Plano Terapêutico</CaseLabel>
+                  <ul className="mt-4 flex flex-col">
+                    {caso1Plano.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 border-b border-[color:var(--color-beige-deep)] py-3 text-[13.5px] leading-[1.8] text-[color:var(--color-text-soft)] last:border-b-0"
+                      >
+                        <span aria-hidden className="mt-px text-[color:var(--color-gold)]">
+                          ✦
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+                <Reveal delay={2}>
+                  <CaseLabel>Evolução</CaseLabel>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    Após 3 meses e 3 semanas de acompanhamento, observou-se
+                    uma melhoria visível da densidade capilar, aumento da
+                    cobertura do couro cabeludo e fortalecimento progressivo
+                    da fibra.
+                  </p>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    As imagens demonstram uma redução significativa da
+                    transparência na zona superior da cabeça, com maior
+                    uniformidade e volume visual dos fios.
+                  </p>
+                </Reveal>
+                <Reveal delay={3}>
+                  <CaseLabel>Resultado</CaseLabel>
+                  <ul className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                    {caso1Resultados.map((item) => (
+                      <CheckItem key={item}>{item}</CheckItem>
+                    ))}
+                  </ul>
+                </Reveal>
+              </div>
+            </div>
+
+            <Reveal delay={1}>
+              <figure className="mt-14 bg-[color:var(--color-beige)] p-8 sm:p-12 md:grid md:grid-cols-[auto_1fr] md:gap-10">
+                <div
+                  aria-hidden
+                  className="hidden select-none font-serif text-[100px] leading-[0.55] text-[color:var(--color-gold)]/35 md:block"
+                >
+                  &ldquo;
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+                    Feedback da Paciente
+                  </p>
+                  <blockquote className="mt-5 font-serif text-[17px] font-light italic leading-[1.75] text-[color:var(--color-ink)] sm:text-[19px]">
+                    &ldquo;Tenho um longo histórico de tratamentos falhados e
+                    queda capilar há muitos anos, estava já descrente com
+                    alguma solução quando a Fábia me propôs fazer um
+                    diagnóstico capilar! Aceitei, embora um pouco na dúvida de
+                    que tivesse algum resultado… mas todo o diagnóstico e a
+                    forma como o tratamento me foi recomendado deu-me
+                    confiança para experimentar!! Quase meio ano depois só
+                    posso aconselhar que façam, os resultados são já visíveis
+                    e começaram a ser visíveis poucas semanas depois de
+                    começar o tratamento! Não só tenho muito cabelo novo a
+                    nascer como o aspecto geral melhorou imenso!! Agradeço
+                    todo o profissionalismo da Fábia e tbm o facto de me ter
+                    feito acreditar que era possível!!&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.28em] text-[color:var(--color-text-soft)]">
+                    <span
+                      aria-hidden
+                      className="block h-px w-7 bg-[color:var(--color-gold)]"
+                    />
+                    Cliente Hair Clinic · Caso 01
+                  </figcaption>
+                </div>
+              </figure>
+            </Reveal>
+          </article>
+
+          {/* ── Caso 02 ── */}
+          <article
+            aria-label="Caso clínico 02 — Recuperação da densidade capilar à distância"
+            className="mt-16 border-t border-[color:var(--color-beige-dark)] pt-14 md:mt-24"
+          >
+            <Reveal>
+              <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+                <span className="font-serif text-[14px] tracking-[0.25em] text-[color:var(--color-gold)]">
+                  CASO 02
+                </span>
+                <h3 className="font-serif text-[clamp(24px,2.6vw,38px)] font-light text-[color:var(--color-ink)]">
+                  Recuperação da Densidade Capilar
+                </h3>
+                <span className="text-[11px] uppercase tracking-[0.25em] text-[color:var(--color-text-soft)]">
+                  Acompanhamento à distância · França
+                </span>
+              </div>
+            </Reveal>
+
+            <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+              <div className="order-2 flex flex-col gap-9 lg:order-1">
+                <Reveal delay={1}>
+                  <CaseLabel>Situação Inicial</CaseLabel>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    Cliente residente em França procurou acompanhamento
+                    especializado devido à perda progressiva de densidade
+                    capilar, afinamento dos fios e aumento da visibilidade do
+                    couro cabeludo, sobretudo na zona superior da cabeça.
+                  </p>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    As imagens iniciais evidenciavam uma rarefação
+                    significativa, com redução do volume e enfraquecimento
+                    geral da fibra capilar.
+                  </p>
+                </Reveal>
+                <Reveal delay={1}>
+                  <CaseLabel>Avaliação Tricológica</CaseLabel>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    Após diagnóstico capilar detalhado, foi desenvolvido um
+                    plano terapêutico personalizado, adaptado às necessidades
+                    específicas da cliente, com acompanhamento contínuo e
+                    monitorização da evolução.
+                  </p>
+                </Reveal>
+                <Reveal delay={2}>
+                  <CaseLabel>Protocolo Implementado</CaseLabel>
+                  <ul className="mt-4 flex flex-col">
+                    {caso2Protocolo.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 border-b border-[color:var(--color-beige-deep)] py-3 text-[13.5px] leading-[1.8] text-[color:var(--color-text-soft)] last:border-b-0"
+                      >
+                        <span aria-hidden className="mt-px text-[color:var(--color-gold)]">
+                          ✦
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+                <Reveal delay={2}>
+                  <CaseLabel>Evolução</CaseLabel>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    Ao longo do acompanhamento observou-se uma melhoria
+                    progressiva da densidade capilar, aumento da cobertura do
+                    couro cabeludo e fortalecimento visível da fibra.
+                  </p>
+                  <p className="mt-4 text-[14px] leading-[2] text-[color:var(--color-text-soft)]">
+                    As fotografias demonstram uma redução significativa da
+                    transparência na zona superior da cabeça, bem como um
+                    aumento do volume visual e da qualidade geral do cabelo.
+                  </p>
+                </Reveal>
+                <Reveal delay={3}>
+                  <CaseLabel>Resultados Observados</CaseLabel>
+                  <ul className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                    {caso2Resultados.map((item) => (
+                      <CheckItem key={item}>{item}</CheckItem>
+                    ))}
+                  </ul>
+                </Reveal>
+              </div>
+
+              <Reveal className="order-1 self-start lg:order-2 lg:sticky lg:top-28">
+                <div className="grid grid-cols-2 gap-2">
+                  {caso2Photos.map((photo) => (
+                    <div
+                      key={photo.src}
+                      className="relative aspect-[9/16] overflow-hidden bg-[color:var(--color-beige)]"
+                    >
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(max-width: 1024px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                      <span className="absolute left-3 top-3 bg-[color:var(--color-cream)]/90 px-3 py-1.5 text-[9px] uppercase tracking-[0.28em] text-[color:var(--color-text)]">
+                        Evolução
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 text-[10px] uppercase tracking-[0.25em] text-[color:var(--color-text-soft)]">
+                  Acompanhamento fotográfico documentado
+                </p>
+              </Reveal>
+            </div>
+
+            <Reveal delay={1}>
+              <div className="mt-12 border-l-2 border-[color:var(--color-gold)] bg-[color:var(--color-beige)] p-7 sm:p-8">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+                  Nota Importante
+                </p>
+                <p className="mt-3 text-[13.5px] leading-[1.9] text-[color:var(--color-text-soft)]">
+                  Cada caso é único e os resultados podem variar de pessoa
+                  para pessoa. Todos os protocolos da Hair Clinic são
+                  personalizados de acordo com a avaliação tricológica e as
+                  necessidades individuais de cada cliente.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={2}>
+              <figure className="mt-8 bg-[color:var(--color-beige)] p-8 sm:p-12 md:grid md:grid-cols-[auto_1fr] md:gap-10">
+                <div
+                  aria-hidden
+                  className="hidden select-none font-serif text-[100px] leading-[0.55] text-[color:var(--color-gold)]/35 md:block"
+                >
+                  &ldquo;
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+                    Feedback da Paciente
+                  </p>
+                  <blockquote className="mt-5 font-serif text-[17px] font-light italic leading-[1.75] text-[color:var(--color-ink)] sm:text-[19px]">
+                    &ldquo;Estou muito contente com os produtos, o meu cabelo
+                    finalmente começou a ganhar vida graças a ti.
+                    Obrigada.&rdquo;
+                  </blockquote>
+                  <p className="mt-5 text-[12px] uppercase tracking-[0.2em] text-[color:var(--color-text-soft)]">
+                    Mais tarde, durante o acompanhamento:
+                  </p>
+                  <blockquote className="mt-3 font-serif text-[17px] font-light italic leading-[1.75] text-[color:var(--color-ink)] sm:text-[19px]">
+                    &ldquo;Já se nota uma grande diferença. Obrigada.&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-4 text-[10px] uppercase tracking-[0.28em] text-[color:var(--color-text-soft)]">
+                    <span
+                      aria-hidden
+                      className="block h-px w-7 bg-[color:var(--color-gold)]"
+                    />
+                    Cliente Hair Clinic · Caso 02
+                  </figcaption>
+                </div>
+              </figure>
+            </Reveal>
+          </article>
         </section>
 
         {/* ─────────────────────────────  DIFERENCIAIS  ────────────────────── */}
@@ -684,6 +1422,124 @@ export default function Home() {
           </div>
         </section>
 
+        <CtaBand
+          variant="ink"
+          line={
+            <>
+              O primeiro passo é uma conversa.
+              <br className="hidden md:block" /> O resto, construímos juntos.
+            </>
+          }
+          primary="Agendar Avaliação"
+          secondary="Contactar via WhatsApp"
+        />
+
+        {/* ────────────────────  PORQUE ESCOLHER A HAIR CLINIC  ────────────── */}
+        <section
+          id="porque"
+          aria-labelledby="porque-heading"
+          className="mx-auto max-w-[1100px] px-5 py-20 text-center sm:px-6 sm:py-24 md:px-14 md:py-32"
+        >
+          <Reveal as="p" className="eyebrow justify-center">
+            Porque Escolher a Hair Clinic
+          </Reveal>
+          <Reveal delay={1}>
+            <h2
+              id="porque-heading"
+              className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+            >
+              Um cuidado completo,
+              <br />
+              <em className="italic text-[color:var(--color-green-deep)]">
+                da origem ao resultado.
+              </em>
+            </h2>
+          </Reveal>
+          <Reveal delay={2}>
+            <ul className="mt-14 flex flex-wrap justify-center gap-3">
+              {porqueEscolher.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-3 border border-[color:var(--color-beige-dark)] px-6 py-4 text-[13px] text-[color:var(--color-text)] transition-colors hover:border-[color:var(--color-gold)]"
+                >
+                  <span aria-hidden className="text-[color:var(--color-gold)]">
+                    ✔
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </section>
+
+        {/* ─────────────────────────────────  FAQ  ─────────────────────────── */}
+        <section
+          id="faq"
+          aria-labelledby="faq-heading"
+          className="bg-[color:var(--color-beige)] py-20 sm:py-24 md:py-32"
+        >
+          <div className="mx-auto max-w-[860px] px-5 sm:px-6">
+            <div className="text-center">
+              <Reveal as="p" className="eyebrow justify-center">
+                FAQ
+              </Reveal>
+              <Reveal delay={1}>
+                <h2
+                  id="faq-heading"
+                  className="mt-6 font-serif text-[clamp(30px,3.4vw,56px)] font-light leading-[1.15] text-[color:var(--color-ink)]"
+                >
+                  Perguntas
+                  <br />
+                  <em className="italic text-[color:var(--color-green-deep)]">
+                    frequentes.
+                  </em>
+                </h2>
+              </Reveal>
+            </div>
+
+            <Reveal delay={2}>
+              <div className="mt-12 border-t border-[color:var(--color-beige-dark)]">
+                {faqItems.map((f) => (
+                  <details
+                    key={f.q}
+                    className="faq-item border-b border-[color:var(--color-beige-dark)]"
+                  >
+                    <summary className="flex items-center justify-between gap-6 py-6 text-left">
+                      <span className="font-serif text-[18px] font-normal text-[color:var(--color-ink)] sm:text-[20px]">
+                        {f.q}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="faq-icon flex h-8 w-8 flex-shrink-0 items-center justify-center border border-[color:var(--color-beige-dark)] text-[15px] font-light text-[color:var(--color-gold)]"
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <p className="pb-7 pr-12 text-[13.5px] leading-[1.9] text-[color:var(--color-text-soft)]">
+                      {f.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={3}>
+              <p className="mt-10 text-center text-[13px] leading-[1.9] text-[color:var(--color-text-soft)]">
+                Tem outra questão?{" "}
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[color:var(--color-ink)] underline decoration-[color:var(--color-gold)] underline-offset-4 transition-colors hover:text-[color:var(--color-green-deep)]"
+                >
+                  Fale connosco via WhatsApp
+                </a>
+                .
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
         {/* ─────────────────────────────  CONTACTO  ────────────────────────── */}
         <section
           id="contacto"
@@ -788,8 +1644,11 @@ export default function Home() {
               title="Clínica"
               items={[
                 { label: "Sobre Nós", href: "#sobre" },
+                { label: "A Fundadora", href: "#fundadora" },
                 { label: "O Método", href: "#metodo" },
+                { label: "Resultados Reais", href: "#resultados" },
                 { label: "Testemunhos", href: "#testemunhos" },
+                { label: "Perguntas Frequentes", href: "#faq" },
                 { label: "Marcar Consulta", href: WHATSAPP_URL, external: true },
               ]}
             />
@@ -845,6 +1704,113 @@ export default function Home() {
         </div>
       </footer>
     </>
+  );
+}
+
+function CtaBand({
+  variant,
+  line,
+  primary,
+  secondary,
+}: {
+  variant: "green" | "ink";
+  line: React.ReactNode;
+  primary: string;
+  secondary: string;
+}) {
+  return (
+    <section
+      aria-label="Marcações rápidas"
+      className={`${
+        variant === "green"
+          ? "bg-[color:var(--color-green-deep)]"
+          : "bg-[color:var(--color-ink)]"
+      } py-14 sm:py-16`}
+    >
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-8 px-5 text-center sm:px-6 md:flex-row md:px-14 md:text-left">
+        <Reveal>
+          <p className="max-w-xl font-serif text-[clamp(22px,2.4vw,32px)] font-light italic leading-[1.45] text-[color:var(--color-cream)]">
+            {line}
+          </p>
+        </Reveal>
+        <Reveal
+          delay={1}
+          className="flex flex-shrink-0 flex-col items-center gap-4 sm:flex-row sm:gap-5"
+        >
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${primary} via WhatsApp`}
+            className="bg-[color:var(--color-cream)] px-8 py-4 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-ink)] transition-colors hover:bg-[color:var(--color-gold)] hover:text-[color:var(--color-cream)] focus-visible:bg-[color:var(--color-gold)] focus-visible:text-[color:var(--color-cream)]"
+          >
+            {primary}
+          </a>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${secondary} via WhatsApp`}
+            className="border border-[color:var(--color-cream)]/40 px-8 py-4 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-cream)] transition-colors hover:border-[color:var(--color-gold)] hover:text-[color:var(--color-gold)] focus-visible:border-[color:var(--color-gold)] focus-visible:text-[color:var(--color-gold)]"
+          >
+            {secondary}
+          </a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function AuthorityCol({
+  title,
+  items,
+  delay,
+}: {
+  title: string;
+  items: string[];
+  delay?: 0 | 1 | 2 | 3;
+}) {
+  return (
+    <Reveal delay={delay ?? 0} className="h-full">
+      <div className="flex h-full flex-col bg-[color:var(--color-beige)] p-8 sm:p-9">
+        <h3 className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+          {title}
+        </h3>
+        <ul className="mt-6 flex flex-col">
+          {items.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 border-b border-[color:var(--color-beige-deep)] py-3 text-[13px] leading-[1.7] text-[color:var(--color-text-soft)] last:border-b-0"
+            >
+              <span aria-hidden className="mt-px text-[color:var(--color-gold)]">
+                ✦
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Reveal>
+  );
+}
+
+function CaseLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-[color:var(--color-gold)]">
+      <span aria-hidden className="block h-px w-7 bg-[color:var(--color-gold)]" />
+      {children}
+    </h4>
+  );
+}
+
+function CheckItem({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-3 text-[13.5px] leading-[1.8] text-[color:var(--color-text)]">
+      <span aria-hidden className="text-[color:var(--color-gold)]">
+        ✔
+      </span>
+      {children}
+    </li>
   );
 }
 
